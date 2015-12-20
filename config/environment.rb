@@ -13,3 +13,4 @@ require "net/http"
 require "nokogiri"
 require "pry"
 require 'open-uri'
+require 'rmagick'

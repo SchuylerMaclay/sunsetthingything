@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
 gem "nokogiri"
-
+gem 'rmagick'
 gem "pry"
 
 group "development" do

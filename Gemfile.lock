@@ -17,6 +17,7 @@ GEM
       slop (~> 3.4)
     pry-nav (0.2.4)
       pry (>= 0.9.10, < 0.11.0)
+    rmagick (2.15.4)
     rspec (3.4.0)
       rspec-core (~> 3.4.0)
       rspec-expectations (~> 3.4.0)
@@ -45,6 +46,7 @@ DEPENDENCIES
   nokogiri
   pry
   pry-nav
+  rmagick
   rspec
   vcr
   webmock
