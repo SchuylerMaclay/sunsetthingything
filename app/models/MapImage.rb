@@ -47,6 +47,6 @@ class MapImage
   end
 
   def convert_hue_to_percent(hue)
-    percent = (hue/240)%100
+    percent = 100 - (hue/240)*100
   end
 end

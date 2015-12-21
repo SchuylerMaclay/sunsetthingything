@@ -44,9 +44,12 @@ class SunsetCLI
   end
 
   def determine_hue(pix_coords)
-    hue = self.mapper.get_hue(pix_coords)
+    hue = mapper.get_hue(pix_coords)
     puts "Hue is #{hue}!!!!"
-    puts "percent is #{mapper.convert_hue_to_percent(hue)}!!!!"
+    puts "Tonight's sunset will be #{mapper.convert_hue_to_percent(hue)}% awesome!!"
+    if mapper.convert_hue_to_percent(hue)>80
+      puts "get out there and take some pics"
+    end
     hue
   end
 
