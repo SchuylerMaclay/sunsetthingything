@@ -6,6 +6,7 @@ GEM
     crack (0.4.3)
       safe_yaml (~> 1.0.0)
     diff-lcs (1.2.5)
+    geocoder (1.2.13)
     hashdiff (0.2.3)
     method_source (0.8.2)
     mini_portile2 (2.0.0)
@@ -43,6 +44,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  geocoder
   nokogiri
   pry
   pry-nav

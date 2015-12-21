@@ -3,6 +3,7 @@ source "https://rubygems.org"
 gem "nokogiri"
 gem 'rmagick'
 gem "pry"
+gem 'geocoder'
 
 group "development" do
   gem "pry"
