@@ -25,8 +25,12 @@ class SunsetCLI
       exit
     else
       coords = get_coords(input)
+      puts coords
       pixel_coords = self.mapper.get_pixels(coords)
-      determine_hue(pixel_coords)
+      puts "pixel coords: #{pixel_coords}"
+      hue = determine_hue(pixel_coords)
+      # binding.pry
+      # puts "Hue: #{hue}"
     end
     run
   end
@@ -41,8 +45,9 @@ class SunsetCLI
 
   def determine_hue(pix_coords)
     hue = self.mapper.get_hue(pix_coords)
-    puts hue
-
+    puts "Hue is #{hue}!!!!"
+    puts "percent is #{mapper.convert_hue_to_percent(hue)}!!!!"
+    hue
   end
 
   def help
