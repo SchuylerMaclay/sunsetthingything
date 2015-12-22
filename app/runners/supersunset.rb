@@ -36,11 +36,10 @@ class SunsetCLI
     run
   end
 
-  def get_coords(input)
-    results = Geocoder.search(input)
+  def get_coords(user_input)
+    results = Geocoder.search(user_input)
     lat = results.first.data["geometry"]['location']['lat']
     lng = results.first.data["geometry"]['location']['lng']
-    # puts "lat: #{lat}, long: #{lng}."
     return "#{lat},#{lng}"
   end
 

@@ -5,7 +5,7 @@ require 'rmagick'
 
 class MapImage
   attr_accessor :sample
-  def initialize(sample=12)
+  def initialize(sample=10)
     #sample size must be even
     @sample = sample
   end
@@ -16,14 +16,11 @@ class MapImage
     y = y.to_i - (sample/2)
     img = Magick::Image::read("app/img/21122015.png")[0]
 
-
     pixels_at_location = img.dispatch(x.to_i, y.to_i, sample, sample, "RGB")
     new_img = Magick::Image.constitute(sample, sample, "RGB", pixels_at_location)
     pix = new_img.scale(1,1)
     averageColor = pix.pixel_color(0,0)
-    # puts averageColor.to_hsla
     hue = averageColor.to_hsla.first
-    #max is 240, min is 0
   end
 
   def get_pixels(coords)
