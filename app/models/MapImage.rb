@@ -5,7 +5,7 @@ require 'rmagick'
 
 class MapImage
   attr_accessor :sample
-  def initialize(sample=10)
+  def initialize(sample=12)
     #sample size must be even
     @sample = sample
   end
@@ -21,7 +21,7 @@ class MapImage
     new_img = Magick::Image.constitute(sample, sample, "RGB", pixels_at_location)
     pix = new_img.scale(1,1)
     averageColor = pix.pixel_color(0,0)
-    puts averageColor.to_hsla
+    # puts averageColor.to_hsla
     hue = averageColor.to_hsla.first
     #max is 240, min is 0
   end

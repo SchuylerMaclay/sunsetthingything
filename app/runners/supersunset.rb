@@ -25,7 +25,8 @@ class SunsetCLI
       exit
     else
       coords = get_coords(input)
-      puts coords
+      puts ""
+      puts "coordinates for #{input} are #{coords}"
       pixel_coords = self.mapper.get_pixels(coords)
       puts "pixel coords: #{pixel_coords}"
       hue = determine_hue(pixel_coords)
@@ -39,14 +40,15 @@ class SunsetCLI
     results = Geocoder.search(input)
     lat = results.first.data["geometry"]['location']['lat']
     lng = results.first.data["geometry"]['location']['lng']
-    puts "lat: #{lat}, long: #{lng}."
+    # puts "lat: #{lat}, long: #{lng}."
     return "#{lat},#{lng}"
   end
 
   def determine_hue(pix_coords)
     hue = mapper.get_hue(pix_coords)
-    puts "Hue is #{hue}!!!!"
-    puts "Tonight's sunset will be #{mapper.convert_hue_to_percent(hue)}% awesome!!"
+    puts "Hue is #{hue}!!  (red is 0, blue is 240)."
+    puts ""
+    puts "Tonight's sunset will be #{mapper.convert_hue_to_percent(hue).round(2)}% awesome!!"
     if mapper.convert_hue_to_percent(hue)>80
       puts "get out there and take some pics"
     end
@@ -55,8 +57,7 @@ class SunsetCLI
 
   def help
     puts "Type 'exit' to exit"
-    puts "Type 'info' to learn about how we filtered outliers"
-    puts "Type 'open' to open the last search in the browser."
+    puts "Type 'help' display this menu."
     puts "Type a location to get started."
   end
 end
