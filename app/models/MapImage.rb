@@ -38,12 +38,13 @@ class MapImage
   end
 
   def lat_convert(lat)
-    (55.904-lat)*23.5084521 + 141
+    pix_per_degree = (938.0-141.0)/(55.904-22.0013)
+    (55.904-lat)*pix_per_degree + 141
   end
 
   def lng_convert(lng)
-    pix_per_degree = (1335-63)/(130-65)
-    (130+lng)*19.58 +63
+    pix_per_degree = (1335.0-63.0)/(130.0-65.0)
+    (130+lng)*pix_per_degree + 63
   end
 
   def convert_hue_to_percent(hue)
