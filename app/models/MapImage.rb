@@ -6,7 +6,7 @@ require 'rmagick'
 class MapImage
   attr_accessor :sample
   def initialize(sample=10)
-    #sample size must be even
+    # sample size must be even
     @sample = sample
   end
 
@@ -14,7 +14,7 @@ class MapImage
     y, x = input.split(',')
     x = x.to_i - (sample/2)
     y = y.to_i - (sample/2)
-    img = Magick::Image::read("app/img/21122015.png")[0]
+    img = Magick::Image::read("app/img/26122015.png")[0]
 
     pixels_at_location = img.dispatch(x.to_i, y.to_i, sample, sample, "RGB")
     new_img = Magick::Image.constitute(sample, sample, "RGB", pixels_at_location)
