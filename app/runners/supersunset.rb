@@ -2,7 +2,7 @@ class SunsetCLI
   attr_accessor :scraper, :mapper
 
   def call
-    puts "Welcome to our dumb app!"
+    puts "Welcome to SuperSunsetter!"
     puts "  type help for a list of commands"
     @scraper = SunsetWXScraper.new
     @mapper = MapImage.new
@@ -45,11 +45,12 @@ class SunsetCLI
 
   def determine_hue(pix_coords)
     hue = mapper.get_hue(pix_coords)
-    puts "Hue is #{hue}!!  (red is 0, blue is 240)."
+    puts "Hue is #{hue}.  (red is 0, blue is 240)."
     puts ""
-    puts "Tonight's sunset will be #{mapper.convert_hue_to_percent(hue).round(2)}% awesome!!"
+    puts "Tonight's sunset will be #{mapper.convert_hue_to_percent(hue).round(2)}% awesome!"
     if mapper.convert_hue_to_percent(hue)>80
       puts "get out there and take some pics"
+      puts ""
     end
     hue
   end
