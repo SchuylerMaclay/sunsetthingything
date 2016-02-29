@@ -20,7 +20,7 @@ class SunsetCLI
       help
     elsif input == "info"
       # binding.pry
-      puts "neat"
+      puts "(Planned feature) Methodology and more info"
     elsif input == "exit"
       exit
     else
